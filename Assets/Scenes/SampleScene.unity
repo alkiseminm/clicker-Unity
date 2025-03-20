@@ -883,6 +883,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &646498069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 646498070}
+  m_Layer: 0
+  m_Name: BuyPlusButtonManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &646498070
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646498069}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 108.914185, y: 14.362503, z: -0.1353004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1729095190}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &707673484
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,7 +1030,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 838445131}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1639346409}
+        m_TargetAssemblyTypeName: multButtonManager, Assembly-CSharp
+        m_MethodName: BuyMult
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &838445131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1308,6 +1351,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119056897}
   m_CullTransparentMesh: 1
+--- !u!1 &1639346407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1639346408}
+  - component: {fileID: 1639346409}
+  m_Layer: 0
+  m_Name: BuyMultButtonManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1639346408
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639346407}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 108.914185, y: 14.362503, z: -0.1353004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1729095190}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1639346409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639346407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95bbe9138d2966e44a73a282ffd8b6e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreManager: {fileID: 1721607227}
+  ProductName: {fileID: 153891705}
+  PriceBuyMult: {fileID: 1855868403}
+  buyMultCost: 10
+  buyMult: 1
 --- !u!1 &1721607226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,11 +1429,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1baef7dbc93c640ba5fc37f3bc7a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 1119056899}
   plus: 1
   mult: 1
   add: 0
   score: 0
-  scoreText: {fileID: 1119056899}
 --- !u!4 &1721607228
 Transform:
   m_ObjectHideFlags: 0
@@ -1388,6 +1480,8 @@ Transform:
   m_Children:
   - {fileID: 1721607228}
   - {fileID: 419190071}
+  - {fileID: 1639346408}
+  - {fileID: 646498070}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1817502747
@@ -1481,7 +1575,7 @@ GameObject:
   - component: {fileID: 1855868404}
   - component: {fileID: 1855868403}
   m_Layer: 5
-  m_Name: Price
+  m_Name: PriceBuyMult
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1753,7 +1847,7 @@ GameObject:
   - component: {fileID: 1923264230}
   - component: {fileID: 1923264229}
   m_Layer: 5
-  m_Name: Price
+  m_Name: PriceBuyPlus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

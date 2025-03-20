@@ -4,12 +4,19 @@ using Unity.VisualScripting;
 
 public class scoreManager : MonoBehaviour
 {
+    public TextMeshProUGUI scoreText;
+
     public int plus = 1;
     public int mult = 1;
     public int add;
 
     public int score = 0;
-    public TextMeshProUGUI scoreText; // For TextMeshPro
+
+    private void Update()
+    {
+        add = plus * mult;
+        scoreText.text = score.ToString();
+    }
 
     void UpdateScoreUI()
     {
@@ -18,11 +25,7 @@ public class scoreManager : MonoBehaviour
 
     public void IncreaseScore()
     {
-        add = plus * mult;
-        
         score += add;
-        
-        UpdateScoreUI();
     }
 
     void Start()
