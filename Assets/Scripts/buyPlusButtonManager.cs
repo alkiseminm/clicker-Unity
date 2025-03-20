@@ -1,16 +1,42 @@
+using TMPro;
 using UnityEngine;
 
 public class plusButtonManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public scoreManager scoreManager;
+    public TextMeshProUGUI ProductName;
+    public TextMeshProUGUI PriceBuyPlus;
+    
+    public int buyPlusCost = 10;
+    public int buyPlus = 1;
+
+    private void Start()
     {
-        
+        UpdateBuyPlusButtonText();
+        UpdatePriceBuyPlusText();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void BuyPlus()
     {
-        
+        if (scoreManager.score >= buyPlusCost)
+        {
+            scoreManager.score -= buyPlusCost;
+            buyPlusCost += buyPlusCost * buyPlus;
+            scoreManager.plus += buyPlus;
+            buyPlus += 1;
+
+            UpdateBuyPlusButtonText();
+            UpdatePriceBuyPlusText();
+        }
+    }
+
+    public void UpdatePriceBuyPlusText()
+    {
+        PriceBuyPlus.text = "Price: " + buyPlusCost.ToString();
+    }
+
+    void UpdateBuyPlusButtonText()
+    {
+        ProductName.text = "+" + buyPlus.ToString() + " Plus";
     }
 }

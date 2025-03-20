@@ -6,6 +6,7 @@ public class scoreManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI ButtonText;
+    public TextMeshProUGUI CalculateText;
 
     public int plus = 1;
     public int mult = 1;
@@ -16,13 +17,19 @@ public class scoreManager : MonoBehaviour
     private void Update()
     {
         CalculateAdd();
-        UpdateScoreUI();
+        UpdateScoreText();
         UpdateButtonText();
+        UpdateCalculatorText();
     }
 
     void CalculateAdd()
     {
         add = plus * mult;
+    }
+    
+    void UpdateCalculatorText()
+    {
+        CalculateText.text = "Plus: +" + plus.ToString() + "\n" + "Multiplier : +" + mult.ToString();
     }
     
     void UpdateButtonText()
@@ -33,7 +40,7 @@ public class scoreManager : MonoBehaviour
         }
     }
 
-    void UpdateScoreUI()
+    void UpdateScoreText()
     {
         scoreText.text = score.ToString();
     }
@@ -47,8 +54,9 @@ public class scoreManager : MonoBehaviour
     {
         add = plus * mult;
         
-        UpdateScoreUI();
+        UpdateScoreText();
         UpdateButtonText();
+        UpdateCalculatorText();
     }
 
     
