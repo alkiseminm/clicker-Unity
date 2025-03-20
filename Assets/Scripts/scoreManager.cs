@@ -1,24 +1,36 @@
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
-public class ScoreManager : MonoBehaviour
+public class scoreManager : MonoBehaviour
 {
+    public int plus = 1;
+    public int mult = 1;
+    public int add;
+
     public int score = 0;
     public TextMeshProUGUI scoreText; // For TextMeshPro
-
-    public void IncreaseScore()
-    {
-        score++;
-        UpdateScoreUI();
-    }
 
     void UpdateScoreUI()
     {
         scoreText.text = score.ToString();
     }
 
-    void Start()
+    public void IncreaseScore()
     {
+        add = plus * mult;
+        
+        score += add;
+        
         UpdateScoreUI();
     }
+
+    void Start()
+    {
+        add = plus * mult;
+        
+        UpdateScoreUI();
+    }
+
+    
 }
