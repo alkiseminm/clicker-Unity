@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 public class scoreManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI ButtonText;
 
     public int plus = 1;
     public int mult = 1;
@@ -14,8 +15,22 @@ public class scoreManager : MonoBehaviour
 
     private void Update()
     {
+        CalculateAdd();
+        UpdateScoreUI();
+        UpdateButtonText();
+    }
+
+    void CalculateAdd()
+    {
         add = plus * mult;
-        scoreText.text = score.ToString();
+    }
+    
+    void UpdateButtonText()
+    {
+        if (ButtonText != null)
+        {
+            ButtonText.text = "+" + add.ToString();
+        }
     }
 
     void UpdateScoreUI()
@@ -33,6 +48,7 @@ public class scoreManager : MonoBehaviour
         add = plus * mult;
         
         UpdateScoreUI();
+        UpdateButtonText();
     }
 
     
