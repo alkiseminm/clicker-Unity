@@ -13,6 +13,15 @@ public class scoreManager : MonoBehaviour
     public int add;
 
     public int score = 0;
+    
+    void Start()
+    {
+        add = plus * mult;
+
+        UpdateScoreText();
+        UpdateButtonText();
+        UpdateCalculatorText();
+    }
 
     private void Update()
     {
@@ -29,7 +38,7 @@ public class scoreManager : MonoBehaviour
     
     void UpdateCalculatorText()
     {
-        CalculateText.text = "Plus: +" + plus.ToString() + "\n" + "Multiplier : +" + mult.ToString();
+        CalculateText.text = "Plus: +" + plus.ToString() + "\n" + "Multiplier : x" + mult.ToString();
     }
     
     void UpdateButtonText()
@@ -49,15 +58,4 @@ public class scoreManager : MonoBehaviour
     {
         score += add;
     }
-
-    void Start()
-    {
-        add = plus * mult;
-        
-        UpdateScoreText();
-        UpdateButtonText();
-        UpdateCalculatorText();
-    }
-
-    
 }

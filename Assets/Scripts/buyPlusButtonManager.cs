@@ -1,10 +1,10 @@
 using TMPro;
 using UnityEngine;
 
-public class plusButtonManager : MonoBehaviour
+public class buyPlusButtonManager : MonoBehaviour
 {
     public scoreManager scoreManager;
-    public TextMeshProUGUI ProductName;
+    public TextMeshProUGUI ProductNamePlus;
     public TextMeshProUGUI PriceBuyPlus;
     
     public int buyPlusCost = 10;
@@ -37,6 +37,6 @@ public class plusButtonManager : MonoBehaviour
 
     void UpdateBuyPlusButtonText()
     {
-        ProductName.text = "+" + buyPlus.ToString() + " Plus";
+        ProductNamePlus.text = "+" + buyPlus.ToString() + " Plus";
     }
 }
