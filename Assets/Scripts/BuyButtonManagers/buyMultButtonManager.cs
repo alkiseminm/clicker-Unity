@@ -4,6 +4,9 @@ using UnityEngine;
 public class buyMultButtonManager : MonoBehaviour
 {
     public scoreManager scoreManager;
+    public pageManager pageManager;
+
+    public GameObject BuyMultButton;
     public TextMeshProUGUI ProductNameMult;
     public TextMeshProUGUI PriceBuyMult;
 
@@ -12,11 +15,12 @@ public class buyMultButtonManager : MonoBehaviour
 
     private void Start()
     {
+        Exist();
         UpdateBuyMultButtonText();
         UpdatePriceBuyMultText();
     }
 
-    public void BuyMult()
+    public void BuyMultButtonPressed()
     {
         if (scoreManager.score >= buyMultCost)
         {
@@ -38,5 +42,17 @@ public class buyMultButtonManager : MonoBehaviour
     void UpdateBuyMultButtonText()
     {
         ProductNameMult.text = "+" + buyMult.ToString() + " Multiplier";
+    }
+
+    void Exist()
+    {
+        if (pageManager.page == 1)
+        {
+            BuyMultButton.SetActive(true);
+        }
+        else
+        {
+            BuyMultButton.SetActive(false);
+        }
     }
 }

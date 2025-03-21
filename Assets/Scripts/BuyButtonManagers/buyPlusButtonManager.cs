@@ -4,6 +4,9 @@ using UnityEngine;
 public class buyPlusButtonManager : MonoBehaviour
 {
     public scoreManager scoreManager;
+    public pageManager pageManager;
+
+    public GameObject BuyPlusButton;
     public TextMeshProUGUI ProductNamePlus;
     public TextMeshProUGUI PriceBuyPlus;
     
@@ -12,11 +15,12 @@ public class buyPlusButtonManager : MonoBehaviour
 
     private void Start()
     {
+        Exist();
         UpdateBuyPlusButtonText();
         UpdatePriceBuyPlusText();
     }
 
-    public void BuyPlus()
+    public void BuyPlusButtonPressed()
     {
         if (scoreManager.score >= buyPlusCost)
         {
@@ -38,5 +42,17 @@ public class buyPlusButtonManager : MonoBehaviour
     void UpdateBuyPlusButtonText()
     {
         ProductNamePlus.text = "+" + buyPlus.ToString() + " Plus";
+    }
+
+    void Exist()
+    {
+        if (pageManager.page == 1)
+        {
+            BuyPlusButton.SetActive(true);
+        }
+        else
+        {
+            BuyPlusButton.SetActive(false);
+        }
     }
 }
