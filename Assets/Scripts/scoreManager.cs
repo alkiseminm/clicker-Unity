@@ -16,8 +16,7 @@ public class scoreManager : MonoBehaviour
     
     void Start()
     {
-        add = plus * mult;
-
+        CalculateAdd();
         UpdateScoreText();
         UpdateButtonText();
         UpdateCalculatorText();
