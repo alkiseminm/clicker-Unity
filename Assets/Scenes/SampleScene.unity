@@ -777,9 +777,40 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1271514013}
   - {fileID: 1639346408}
   - {fileID: 45114760}
-  - {fileID: 1271514013}
+  m_Father: {fileID: 1729095190}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &491321676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 491321677}
+  m_Layer: 0
+  m_Name: Page2ButtonManagers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &491321677
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491321676}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 1729095190}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
@@ -1457,9 +1488,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1721607227}
-        m_TargetAssemblyTypeName: scoreManager, Assembly-CSharp
-        m_MethodName: IncreaseScore
+      - m_Target: {fileID: 1271514014}
+        m_TargetAssemblyTypeName: scoreButtonManager, Assembly-CSharp
+        m_MethodName: ScoreButtonPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1870,6 +1901,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1271514013}
+  - component: {fileID: 1271514014}
   m_Layer: 0
   m_Name: ScoreButtonManager
   m_TagString: Untagged
@@ -1892,6 +1924,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 447600526}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1271514014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271514012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 347ef77e814ed9a41b496de87d3a2d78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreManager: {fileID: 1721607227}
+  ButtonText: {fileID: 1915276637}
+  CalculateText: {fileID: 166089956}
+  add: 0
 --- !u!1 &1416138542
 GameObject:
   m_ObjectHideFlags: 0
@@ -2883,11 +2931,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1119056899}
-  ButtonText: {fileID: 1915276637}
-  CalculateText: {fileID: 166089956}
   plus: 1
   mult: 1
-  add: 0
   score: 0
 --- !u!4 &1721607228
 Transform:
@@ -2936,8 +2981,9 @@ Transform:
   - {fileID: 1721607228}
   - {fileID: 618495979}
   - {fileID: 1245300261}
-  - {fileID: 447600526}
   - {fileID: 106518405}
+  - {fileID: 447600526}
+  - {fileID: 491321677}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1817502747
