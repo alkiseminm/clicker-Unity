@@ -20,6 +20,11 @@ public class buyMultButtonManager : MonoBehaviour
         UpdatePriceBuyMultText();
     }
 
+    private void Update()
+    {
+        Exist();
+    }
+
     public void BuyMultButtonPressed()
     {
         if (scoreManager.score >= buyMultCost)

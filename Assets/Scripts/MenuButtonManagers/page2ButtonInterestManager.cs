@@ -3,6 +3,7 @@ using UnityEngine;
 public class page2ButtonInterestManager : MonoBehaviour
 {
     public menuManager menuManager;
+    public pageManager pageManager;
 
     public GameObject Page2ButtonInterest;
 
@@ -22,5 +23,10 @@ public class page2ButtonInterestManager : MonoBehaviour
         {
             Page2ButtonInterest.SetActive(false);
         }
+    }
+
+    public void Page2ButtonInterestPressed()
+    {
+        pageManager.page = 2;
     }
 }

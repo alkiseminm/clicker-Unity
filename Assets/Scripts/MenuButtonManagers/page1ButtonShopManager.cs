@@ -3,6 +3,7 @@ using UnityEngine;
 public class page1ButtonShopManager : MonoBehaviour
 {
     public menuManager menuManager;
+    public pageManager pageManager;
 
     public GameObject Page1ButtonShop;
     
@@ -22,5 +23,10 @@ public class page1ButtonShopManager : MonoBehaviour
         {
             Page1ButtonShop.SetActive(false);
         }
+    }
+
+    public void Page1ButtonShopPressed()
+    {
+        pageManager.page = 1;
     }
 }

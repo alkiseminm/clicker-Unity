@@ -20,6 +20,11 @@ public class buyPlusButtonManager : MonoBehaviour
         UpdatePriceBuyPlusText();
     }
 
+    private void Update()
+    {
+        Exist();
+    }
+
     public void BuyPlusButtonPressed()
     {
         if (scoreManager.score >= buyPlusCost)

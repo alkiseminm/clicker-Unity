@@ -661,7 +661,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 274206682}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1536797706}
+        m_TargetAssemblyTypeName: page1ButtonShopManager, Assembly-CSharp
+        m_MethodName: Page1ButtonShopPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &274206682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1761,7 +1773,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1251908112}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1541298280}
+        m_TargetAssemblyTypeName: page2ButtonInterestManager, Assembly-CSharp
+        m_MethodName: Page2ButtonInterestPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1251908112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2117,6 +2141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuManager: {fileID: 1245300262}
+  pageManager: {fileID: 618495978}
   Page1ButtonShop: {fileID: 274206679}
 --- !u!1 &1541298278
 GameObject:
@@ -2163,6 +2188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuManager: {fileID: 1245300262}
+  pageManager: {fileID: 618495978}
   Page2ButtonInterest: {fileID: 1251908109}
 --- !u!1 &1559336634
 GameObject:
